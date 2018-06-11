@@ -1,0 +1,667 @@
+/*
+  Theme Name: Yanolja Company
+  Author: Jo Youngsoo
+  Version: 2.3
+  Description: 야놀자 회사 홈페이지를 위한 테마입니다. 일반적인 테마처럼 확장과 레이아웃 변경 등을 고려하지 않고 기획/협의 된 디자인대로 구현할 수 있도록 제작되었습니다. 위젯이나 사이드바, 댓글 같은 추가적인 기능들을 활성화해도 작동되지 않을 수 있습니다. 추가적인 문의사항은 draw.round@gmail.com 으로 연락주세요.(2016.03.15.) / 영문사이트 전환 기능 업데이트(2016. 05. 25.) / 홈화면 커버 슬라이드 이미지 교체, 영문 채용공고 페이지 수정(2016. 05. 30.) / 인재채용 메뉴 전체 변경 (2017. 5. 19.) / Navigation - Mega Menu Plugin 적용 (2017. 6. 15.) / 사업소개 수정 (2018. 4.8.)
+*/
+
+/* ---------- General ---------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+  font-smooth: always;
+  font-family: 'APPLE SD Gothic Neo', sans-serif;
+  line-height: 1.5;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
+	text-align: center;
+	font-family: "Rix모던고딕 EB";
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+img { 
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: bicubic; 
+  border: 0;
+}
+a {
+  color:inherit;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a[href^="tel"]{
+  color:inherit;
+  text-decoration:none;
+}
+.caption_text_wrap {
+  position:absolute;
+  top: 38%;
+  left: 10%;
+  right: 10%;
+  font-family: 'NanumSquare';
+  font-size:28px;
+  font-weight: 400;
+  line-height: 1.33;
+  color:#fff;
+  text-shadow:1px 1px 1px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index:500;
+}
+
+/* Loading */
+#loading {
+ width: 100%;  
+ height: 100%;  
+ top: 0px;
+ left: 0px;
+ position: fixed;  
+ display: block;  
+ opacity: 0.95;  
+ background-color: #fff;  
+ z-index: 99999;  
+ text-align: center; } 
+  
+#loading-image {  
+ position: absolute;  
+ top: 50%;  
+ left: 50%; 
+ z-index: 100; 
+ width: 150px;
+ height: 150px;
+ margin-top: -75px;
+ margin-left: -75px;
+}
+
+/* Header */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 9999; 
+  height: 55px;
+  background: url('images/cover/cover_gradation@2x.png') repeat;
+  background-size: 1px 55px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+nav {
+  max-width: 940px;
+  height: 40px; 
+  margin: 0 auto;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  position: relative;
+}
+nav .b2b_badge {
+  display: none;
+}
+nav .b2b_badge img, .b2b_badge_mobile img{
+  width: 30px;
+  height: 30px;
+  display: block;
+  float: left;
+  margin-top: 1px;
+  margin-right: 4px;
+}
+.b2b_badge_mobile {
+  display: block;
+  position: absolute;
+  top: 64px;
+  right: 0px;
+  font-size: 13px;
+  padding: 6px 9px;
+  background: #ffcc29;
+  color: #fff;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  z-index: 9;
+}
+
+header h1#logo_en {
+  margin-top: 10px;
+  width: 77px;
+  height: 30px;
+  background: url('images/logo/logo_yanolja_white_en@2x.png?2') no-repeat;
+  background-size: 77px 30px;
+  background-position: 0px 2px;
+}
+
+/* Header Scroll */
+header.smaller {
+  background: rgba(255, 255, 255, 1);
+  border-bottom: 1px solid #eee;
+}
+header.smaller h1#logo_en {
+  margin-top: 10px;
+  height: 30px;
+  background: url('images/logo/logo_yanolja_pink_en@2x.png?2') no-repeat;
+  background-size: 77px 30px;
+  background-position: 0px 2px;
+}
+
+/* Cover */
+.margin-top {
+  height: 55px; background-color: #f8f8f8;
+}
+.cover_container {
+  position: relative; width: 100%;
+}
+#cover {
+  display: flex; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 130vw;
+  padding: 0;
+  margin: 0;
+  z-index: -10;
+}
+#cover h2 {
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: 3px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'NanumSquare';
+}
+#cover p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+.cover_container .button {
+  margin: 10px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 13px;
+  display: block;
+  max-width: 280px;
+  margin: 0 auto 20px;
+}
+
+/* Section */
+section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -webkit-flex-direction: column; 
+      -ms-flex-direction: column; 
+          flex-direction: column; 
+  background-color: #fff;
+}
+section h2 {
+  display:-webkit-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex; 
+  -webkit-box-align: center; 
+  -webkit-align-items: center; 
+      -ms-flex-align: center; 
+          align-items: center; 
+  -webkit-box-pack: center; 
+  -webkit-justify-content: center; 
+      -ms-flex-pack: center; 
+          justify-content: center;
+  margin: 0; 
+  height: 15vh; 
+  font-family: 'NanumSquare';
+  font-size: 20px; 
+  letter-spacing: 5px; 
+  text-transform: uppercase; 
+  color: #ffcc29; 
+}
+section .contents_container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -webkit-flex-direction: column; 
+      -ms-flex-direction: column; 
+          flex-direction: column; 
+  -webkit-box-align: center; 
+  -webkit-align-items: center; 
+      -ms-flex-align: center; 
+          align-items: center; 
+  -webkit-box-pack: center; 
+  -webkit-justify-content: center; 
+      -ms-flex-pack: center; 
+          justify-content: center;
+  width: 100%; 
+  max-width: 900px; 
+  min-height: 40vh;
+  margin: 0 auto; 
+  padding-bottom: 50px;
+}
+
+/* Footer */
+footer {
+  padding: 25px 0; background-color: #252425; font-family: 'NanumSquare';
+}
+.footer_container {
+  display: flex; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column; 
+  max-width: 940px; 
+  padding-left: 10px; 
+  padding-right: 10px; 
+  margin: 0 auto;}
+.footer_container .company_info_container {
+  display: flex; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex;
+  -webkit-box-flex :1;
+  -webkit-flex :1;
+  -ms-flex :1;
+  flex :1; 
+  -webkit-box-orient: vertical; 
+  -webkit-box-direction: normal; 
+  -webkit-flex-direction: column; 
+  -ms-flex-direction: column; 
+  flex-direction: column; 
+  font-size: 13px; 
+  line-height: 1.5; 
+  color: #ccc;
+}
+.footer_container .company_info_container h2.name {
+  margin: 5px 0 15px 0; 
+  font-size: 16px; 
+  color: #fff;
+}
+.footer_container .company_info_container .copyright {
+  margin:10px 0;
+}
+.footer_container .misc_container {
+ display: flex; 
+ display: -webkit-box; 
+ display: -ms-flexbox; 
+ display: -webkit-flex;
+ -webkit-box-orient: horizontal;
+ -webkit-box-direction: normal;
+ -webkit-flex-direction: row;
+ -ms-flex-direction: row;
+ flex-direction: row; 
+ -webkit-box-pack: justify; 
+ -webkit-justify-content: space-between; 
+ -ms-flex-pack: justify; 
+ justify-content: space-between;
+ margin-top: 20px; 
+}
+.footer_container .misc_container .btn_container {
+  display: flex; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.footer_container .misc_container .btn_download{
+  display: block;
+  height: 17px; 
+  line-height: 17px; 
+  border: 1px solid #ddd;
+  border-radius: 4px; 
+  margin: 0;
+  padding: 10px 40px 10px 15px; 
+  font-size: 14px;
+  color: #fff; 
+  background: url('images/common/ic_download_small_white@2x.png') no-repeat; 
+  background-position: right 10px center; 
+  background-size: 20px; 
+  cursor: pointer;
+}
+.footer_container .misc_container .social_container {
+  display: flex; 
+  display: -webkit-box; 
+  display: -ms-flexbox; 
+  display: -webkit-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row; 
+  -webkit-box-pack: end; 
+  -webkit-justify-content: flex-end; 
+  -ms-flex-pack: end; 
+  justify-content: flex-end; 
+  -webkit-box-align: end; 
+  -webkit-align-items: flex-end; 
+  -ms-flex-align: end; 
+  align-items: flex-end; 
+  margin-left: 20px;
+}
+.footer_container .misc_container .social_container img{
+  width: 40px; 
+  height: 40px; 
+  margin-right: 10px;
+  opacity: 0.9;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Familysite Show Hide */
+.btn_familysite {
+  position: relative;
+  margin: 10px 0 0 0;
+  border: 1px solid #ddd; 
+  border-radius: 4px;
+}
+.btn_familysite dt {
+  height: 17px; 
+  line-height: 17px; 
+  padding: 10px 70px 10px 15px; 
+  color: #fff; 
+  font-size: 14px; 
+  cursor: pointer;
+  white-space: nowrap;
+  background: url('images/common/btn_show_hide_up_white@2x.png') no-repeat;
+  background-size: 20px 20px;
+  background-position: right 10px center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn_familysite dt.expanded {
+  background: url('images/common/btn_show_hide_down_white@2x.png') no-repeat !important;
+  background-size: 20px 20px !important;
+  background-position: right 10px center !important;  
+}
+.btn_familysite dd {
+  margin: 0;
+  position: absolute;
+  bottom: 36px;
+  left: -1px;
+  width: 100%;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #242524;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 2;
+}
+.btn_familysite dd ul{
+  list-style-type: none;
+  padding: 10px 0;
+  margin: 0;
+}
+.btn_familysite dd ul li{
+  padding: 0 15px;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* Article */
+article h1 {margin-top: 50px !important;}
+article img { margin: 20px auto 5px !important; max-width: 720px !important;}
+article ul {margin-top: -10px !important; color: #444 !important;}
+article ul li { font-size: 14px !important; line-height: 1.5 !important; }
+
+/* 버튼 2017.6.9 추가 */
+.download_container {
+  margin: 0 auto;
+  clear: both;
+}
+.download_container .btn_download{
+  display: block;
+  text-align: left;
+  border: 1px solid #ffcc29; 
+  border-radius: 3px; 
+  color: #ffcc29; 
+  padding: 10px 40px 10px 15px; 
+  font-size: 14px; 
+  line-height: 17px; 
+  background: #fff url('images/common/ic_download_small_pink@2x.png') no-repeat; 
+  background-position: right 10px center; 
+  background-size: 20px;
+}
+.download_container .btn_goto{
+  display: block;
+  text-align: left;
+  border: 1px solid #ffcc29; 
+  border-radius: 3px; 
+  color: #ffcc29; 
+  padding: 10px 40px 10px 15px; 
+  font-size: 14px; 
+  line-height: 17px; 
+  background: #fff url('images/common/ic_goto_small_pink@2x.png') no-repeat; 
+  background-position: right 10px center; 
+  background-size: 20px;
+}
+
+/* youtube 2017. 6. 16. */
+.youtubeWrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+}
+.youtubeWrap iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive for Table + PC (device width:783px more) */
+@media only screen and (min-width: 783px) {
+  /* ---------- General ---------- */
+  html {
+    font-family: 'NanumSquare', 'APPLE SD Gothic Neo', 'Nanum Gothic', sans-serif;
+  }
+  a:hover {
+    color: #ffcc29;
+  }
+  nav .b2b_badge {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -130px;
+    font-size: 13px;
+    padding: 6px 9px;
+    background: #ffcc29;
+    color: #fff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .b2b_badge_mobile { display: none; }
+  header {
+    height: 65px;
+    background: url('images/cover/cover_gradation@2x.png') repeat;
+    background-size: 1px 65px;
+  }
+  header h1#logo_en {
+    margin: 0;
+    width: 90px;
+    height: 35px;
+    background: url('images/logo/logo_yanolja_white_en@2x.png?2') no-repeat;
+    background-size: 90px 35px;
+    background-position: 0px 2px;
+    margin-right: 20px;
+    margin-top: -2px;
+  }
+  
+  /* Header Scroll */
+  header.smaller h1#logo_en {
+    height: 35px;
+    background: url('images/logo/logo_yanolja_pink_en@2x.png?2') no-repeat;
+    background-size: 90px 35px;
+    background-position: 0px 2px;
+    margin-right: 20px;
+    margin-top: -2px;
+  }
+
+  /* Cover */
+  .margin-top {
+    height: 65px;
+  }
+  #cover {
+    height: 100vh;
+  }
+  #cover h2 {
+    font-size: 60px;
+    line-height: 1.3;
+    letter-spacing: 15px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  #cover p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-align: center;
+  }
+  .cover_container .button {
+    font-size: 18px;
+  }
+  section .contents_container {
+    padding-bottom: 100px;
+  }
+
+  /* Footer */
+  .footer_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+            flex-direction: row; 
+    -webkit-box-align: center; 
+    -webkit-align-items: center; 
+    -ms-flex-align: center; 
+            align-items: center;
+  }
+  .footer_container .misc_container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 10px;
+  }
+  .footer_container .misc_container .btn_container{
+    display: flex; 
+    display: -webkit-box; 
+    display: -ms-flexbox; 
+    display: -webkit-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+            flex-direction: row;
+    margin-bottom: 70px;
+  }
+  .footer_container .misc_container .btn_download:hover{
+    border: 1px solid #fff;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05) url('images/common/ic_download_small_white@2x.png') no-repeat; background-position: right 10px center; background-size: 20px;
+  }
+  .footer_container .misc_container .btn_familysite {
+    margin: 0 0 0 10px; 
+  }
+  .footer_container .misc_container .btn_familysite dt:hover{
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05) url('images/common/btn_show_hide_up_white@2x.png') no-repeat;
+    background-size: 20px 20px;
+    background-position: right 10px center;
+  }
+  .footer_container .misc_container .btn_familysite dd li:hover{
+    color: #fff;
+    background-color: #383938;
+  }
+  .footer_container .misc_container .btn_familysite dd a:hover {
+    color: inherit;
+  }
+  .footer_container .misc_container .social_container a:hover img{
+    opacity: 1
+  }
+  
+  /* Button 2017.6.15 */
+  .download_container .btn_goto:hover {
+    color: #fff;
+    background: #ffcc29 url('images/common/ic_goto_small_white@2x.png') no-repeat; 
+    background-position: right 10px center; 
+    background-size: 20px;
+  }
+  .download_container .btn_download:hover {
+    color: #fff;
+    background: #ffcc29 url('images/common/ic_download_small_white@2x.png') no-repeat; 
+    background-position: right 10px center; 
+    background-size: 20px;
+  }
+  
+
+
+}
+
+/* IE10 + */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  section > h2 {
+   font-weight: 400;
+  }
+  .article > h3 {
+   font-weight: 400;
+  }
+  table.announceSettlement th, table.announceSettlement td{
+    font-weight: 400;
+  }
+  .represent p, .inspection_comment p{
+    font-weight: 400 !important;
+  }
+}
+
+/* FIX */
+/* Responsive for Table + PC (device width:783px more) */
+@media only screen and (min-width: 783px) {
+table.announceSettlement td.intent_one {padding-left: 20px !important;}
+table.announceSettlement td.intent_two {padding-left: 40px !important;}
+}
